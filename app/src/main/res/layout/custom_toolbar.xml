@@ -25,6 +25,8 @@
                 android:id="@+id/getForecastBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:theme="@style/Button"
+                android:textColor="#fff"
                 android:text="Go">
 
             </Button>

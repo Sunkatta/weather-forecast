@@ -309,6 +309,10 @@ public class MainActivity extends AppCompatActivity {
                     weatherConditionView.setGravity(Gravity.CENTER_HORIZONTAL);
                     weatherConditionView.setTextColor(Color.WHITE);
 
+                    TextView readMore = new TextView(getApplicationContext());
+                    readMore.setGravity(Gravity.CENTER_HORIZONTAL);
+                    readMore.setTextColor(Color.WHITE);
+
                     try {
                         JSONObject dailyForecast = (JSONObject)weatherInfo.get(i);
                         Date date = new Date(dailyForecast.getLong(Constants.FORECAST_DATE_TIME) * 1000);
@@ -339,11 +343,13 @@ public class MainActivity extends AppCompatActivity {
                         dateView.setText(forecast.getDayOfWeek());
                         temperatureView.setText(forecast.getTemperature());
                         weatherConditionView.setText(forecast.getWeatherStatus());
+                        readMore.setText(R.string.read_more);
 
                         cardView.addView(imageView);
                         cardView.addView(dateView);
                         cardView.addView(temperatureView);
                         cardView.addView(weatherConditionView);
+                        cardView.addView(readMore);
                         weatherContainer.addView(cardView);
 
                         final int index = i;
